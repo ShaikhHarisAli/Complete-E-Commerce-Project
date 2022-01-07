@@ -1,9 +1,9 @@
 const express= require("express")
 const router= express.Router()   
 //Router is a function of express
-const {sayHi}=require("../controllers/user")
+const {signup}=require("../controllers/user")
 
-router.get('/', sayHi)
+router.post('/signup', signup)
 //import sayHi method from Controller
 // anything comes to the forward slash we gave 
 // to this sayHi method 
