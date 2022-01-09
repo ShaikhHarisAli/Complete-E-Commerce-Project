@@ -64,6 +64,13 @@ userSchema.virtual('password')
 // we need to create this method (encryptPassword) add to the user schema
 // this is the way you can add methids to user schema
 userSchema.methods={
+    authenticate: function(plainText){
+        return this.encryptPassword(plainText) === this.hash_password;
+    },
+
+
+
+
     encryptPassword:function(password){
         if(!password) return '';
         try{
