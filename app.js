@@ -9,8 +9,10 @@ require('dotenv').config()
 
 const app= express();
 //import routes
-const authRoutes = require("./routes/auth")
-const userRoutes = require("./routes/user")
+const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/user");
+const categoryRoutes = require("./routes/category");
+const productRoutes = require("./routes/product");
 
 
 
@@ -35,6 +37,9 @@ mongoose.connect(process.env.DATABASE,{
  //routes middlewear
 app.use('/api',authRoutes)
 app.use('/api',userRoutes)
+app.use('/api',categoryRoutes)
+app.use('/api',productRoutes)
+
 
 const port = process.env.PORT || 8080
 // in node js we have "PROCESS" just like in web browser we have Document object
